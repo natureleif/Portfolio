@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@Main.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whitman.cs370proj.composer.MainController">
+    <center>
+        <ScrollPane fx:id="scroll">
+            <content>
+                <Pane fx:id="notePane" onMouseDragged="#selectionBox" onMouseReleased="#handleMouseRelease" prefHeight="1280" prefWidth="10000">
+                <children>
+                </children></Pane>
+            </content>
+        </ScrollPane>
+    </center>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="File">
+                <MenuItem fx:id="about" mnemonicParsing="false" onAction="#handleAbout" text="About..." />
+                <SeparatorMenuItem />
+                <MenuItem fx:id="newMenuItem" mnemonicParsing="false" onAction="#handleNew" text="New">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#handleOpen" text="Open..." />
+                <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#handleSave" text="Save">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#handleSaveAs" text="Save as..." />
+                <SeparatorMenuItem />
+                <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleExit" text="Exit">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items>
+                    <MenuItem fx:id="undoMenuItem" mnemonicParsing="false" onAction="#handleUndo" text="Undo">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem fx:id="redoMenuItem" mnemonicParsing="false" onAction="#handleRedo" text="Redo">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="selectAllMenuItem" mnemonicParsing="false" onAction="#handleSelectAll" text="Select All">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#handleDelete" text="Delete">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="BACK_SPACE" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="groupMenuItem" mnemonicParsing="false" onAction="#handleGroup" text="Group">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem fx:id="ungroupMenuItem" mnemonicParsing="false" onAction="#handleUngroup" text="Ungroup">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="cutMenuItem" mnemonicParsing="false" onAction="#handleCut" text="Cut">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem fx:id="copyMenuItem" mnemonicParsing="false" onAction="#handleCopy" text="Copy">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem fx:id="pasteMenuItem" mnemonicParsing="false" onAction="#handlePaste" text="Paste">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Actions">
+                <MenuItem fx:id="playMenuItem" mnemonicParsing="false" onAction="#handlePlay" text="Play">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="stopMenuItem" mnemonicParsing="false" onAction="#handleStop" text="Stop">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+            </Menu>
+         <Menu mnemonicParsing="false" text="Options">
+           <items>
+             <MenuItem fx:id="snappingMenuItem" mnemonicParsing="false" onAction="#handleSnapping" text="Change Snapping" />
+           </items>
+         </Menu>
+        </MenuBar>
+    </top>
+   <left>
+      <Pane prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT" spacing="10.0">
+                <children>
+                    <RadioButton fx:id="piano" mnemonicParsing="false" onAction="#handleInstrument" text="Piano">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="harpsichord" mnemonicParsing="false" onAction="#handleInstrument" text="Harpsichord">
+                        <toggleGroup>
+                            <fx:reference source="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="marimba" mnemonicParsing="false" onAction="#handleInstrument" text="Marimba">
+                        <toggleGroup>
+                            <fx:reference source="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="organ" mnemonicParsing="false" onAction="#handleInstrument" text="Church Organ">
+                        <toggleGroup>
+                            <fx:reference source="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="accordion" mnemonicParsing="false" onAction="#handleInstrument" text="Accordion">
+                        <toggleGroup>
+                            <fx:reference source="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="guitar" mnemonicParsing="false" onAction="#handleInstrument" text="Guitar">
+                        <toggleGroup>
+                            <fx:reference source="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="violin" mnemonicParsing="false" onAction="#handleInstrument" text="Violin">
+                        <toggleGroup>
+                            <fx:reference source="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="frenchHorn" mnemonicParsing="false" onAction="#handleInstrument" text="French Horn">
+                        <toggleGroup>
+                            <fx:reference source="instruments" />
+                        </toggleGroup>
+                    </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="5.0" top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

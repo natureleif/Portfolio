@@ -1,0 +1,114 @@
+.line {
+     -fx-stroke: rgb(173, 173, 173);
+}
+
+#piano {
+     -fx-background-color: #D22B2B;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note0 {
+     -fx-fill: #D22B2B;
+}
+
+#harpsichord {
+     -fx-background-color: #F28C28;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note1 {
+     -fx-fill: #F28C28;
+}
+
+#marimba {
+     -fx-background-color: #FFBF00;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note2 {
+     -fx-fill: #FFBF00;
+}
+
+#organ {
+     -fx-background-color:#097969;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note3 {
+     -fx-fill:#097969;
+}
+
+#accordion {
+     -fx-background-color: #0F52BA;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note4 {
+     -fx-fill: #0F52BA;
+}
+
+#guitar {
+     -fx-background-color: #800080;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note5 {
+     -fx-fill: #800080;
+}
+
+#violin {
+     -fx-background-color: #F33A6A;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note6 {
+     -fx-fill: #F33A6A;
+}
+
+#frenchHorn {
+     -fx-background-color: #6E260E;
+     -fx-text-fill: white;
+     -fx-padding: 5;
+     -fx-border-color: black;
+     -fx-border-radius: 10;
+     -fx-background-radius: 11;
+}
+
+.note7 {
+     -fx-fill: #6E260E;
+}
+
+.group {
+     -fx-stroke-dash-array: 12;
+     -fx-stroke-width: 2.0;
+     -fx-stroke-color: black;
+     -fx-fill: transparent;
+}
